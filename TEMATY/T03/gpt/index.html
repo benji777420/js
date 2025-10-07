@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porównanie programowania obiektowego i strukturalnego</title>
+    <style>
+        :root{
+            --bg: #0b1220;
+            --panel: #121a2b;
+            --panel-2:#0f1626;
+            --text: #e6ecff;
+            --muted:#a9b4d0;
+            --accent:#7aa2ff;
+            --accent-2:#57e0c6;
+            --border: #22304d;
+            --code-bg:#0b1020;
+        }
+        @media (prefers-color-scheme: light){
+            :root{
+                --bg: #f7f9fc;
+                --panel:#ffffff;
+                --panel-2:#f1f5ff;
+                --text:#0a0e1a;
+                --muted:#35425f;
+                --accent:#2f5bff;
+                --accent-2:#0ea889;
+                --border:#d9e0f2;
+                --code-bg:#f4f6ff;
+            }
+        }
+        *{box-sizing:border-box}
+        html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Noto Sans", Arial, sans-serif;}
+        a{color:var(--accent)}
+        .wrapper{max-width:1100px; margin: 40px auto; padding: 0 20px;}
+        header{
+            background: linear-gradient(135deg, var(--panel), var(--panel-2));
+            border:1px solid var(--border);
+            padding:32px; border-radius:24px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+        }
+        h1{margin:0; font-size: clamp(1.6rem, 1rem + 3vw, 3rem); letter-spacing:.2px}
+        .subtitle{margin-top:.5rem; color:var(--muted); font-size:1rem}
+
+        .grid{display:grid; gap:18px; grid-template-columns: repeat(12, 1fr); margin-top:22px}
+        .card{grid-column: span 12; background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:20px}
+        @media(min-width:900px){
+            .span-6{grid-column: span 6}
+            .span-4{grid-column: span 4}
+            .span-8{grid-column: span 8}
+        }
+
+        h2{margin:.2rem 0 0.6rem; font-size:1.5rem}
+        h3{margin:1rem 0 .4rem; font-size:1.2rem}
+        p{line-height:1.6; color:var(--text)}
+        ul{margin:.3rem 0 .8rem 1.2rem; padding:0}
+        li{margin:.25rem 0; color:var(--text)}
+
+        .tag{display:inline-block; padding:.35rem .6rem; border-radius:999px; background:rgba(122,162,255,.15); color:var(--accent); border:1px solid var(--border); font-weight:600; font-size:.85rem}
+        .pill{display:inline-grid; grid-auto-flow:column; gap:8px; align-items:center}
+
+        .cmp{display:flex; gap:16px; flex-wrap:wrap}
+        .cmp > div{flex:1 1 280px; border:1px dashed var(--border); border-radius:14px; padding:14px; background:linear-gradient(180deg, rgba(122,162,255,.07), transparent)}
+
+        pre{background:var(--code-bg); color:var(--text); padding:16px; border-radius:14px; overflow:auto; border:1px solid var(--border)}
+        code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+
+        .note{font-size:.95rem; color:var(--muted)}
+        .callout{border-left:4px solid var(--accent-2); padding:.6rem .9rem; background: linear-gradient(90deg, rgba(87,224,198,.08), transparent); border-radius:10px}
+
+        footer{margin:28px 0 80px; color:var(--muted); font-size:.9rem}
+
+        /* Print styles */
+        @media print{
+            .wrapper{max-width:100%; margin:0; padding:0}
+            header, .card{box-shadow:none}
+            a{color:inherit}
+            body{background:#fff; color:#000}
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Porównanie programowania obiektowego i strukturalnego</h1>
+        <p class="subtitle">Zwięzła notatka z definicjami, założeniami, przykładami i różnicami.</p>
+        <div class="pill" style="margin-top:12px">
+            <span class="tag">Strukturalne</span>
+            <span class="tag">Obiektowe (OOP)</span>
+            <span class="tag">Abstrakcja</span>
+            <span class="tag">Enkapsulacja</span>
+            <span class="tag">Dziedziczenie</span>
+            <span class="tag">Polimorfizm</span>
+        </div>
+    </header>
+
+    <section class="grid">
+        <article class="card span-6">
+            <h2>Programowanie strukturalne</h2>
+            <p>
+                Paradygmat zakładający rozdzielenie funkcjonalności programu na moduły (podprogramy),
+                które komunikują się ze sobą poprzez określone interfejsy. Jest to rozwinięcie programowania proceduralnego
+                poprawiające przejrzystość i jakość kodu oraz przyspieszające tworzenie oprogramowania.
+            </p>
+            <h3>Założenia</h3>
+            <ul>
+                <li>Bloki kodu z jednym punktem wejścia (możliwe wiele wyjść).</li>
+                <li>Wykonywanie wyrażeń w ustalonej kolejności.</li>
+                <li>Instrukcje warunkowe: <code>if</code>, <code>if...else</code>.</li>
+                <li>Pętle: <code>for</code>, <code>while</code>, <code>do...while</code>.</li>
+                <li>Unikanie instrukcji skoku: <code>goto</code>.</li>
+                <li>Ostrożne użycie/ograniczenie <code>break</code> i <code>continue</code>.</li>
+            </ul>
+        </article>
+
+        <article class="card span-6">
+            <h2>Programowanie obiektowe (OOP)</h2>
+            <p>
+                Paradygmat reprezentujący problemy w postaci <strong>obiektów</strong> z polami opisującymi stan
+                i metodami definiującymi zachowanie. To podejście jest często bardziej naturalne oraz bliższe
+                sposobowi postrzegania rzeczywistości.
+            </p>
+            <h3>Założenia</h3>
+            <ul>
+                <li><strong>Abstrakcja</strong> – redukcja do kluczowych właściwości i ukrycie implementacji za interfejsem.</li>
+                <li><strong>Enkapsulacja</strong> – kontrolowany dostęp do danych poprzez metody/publiczny interfejs.</li>
+                <li><strong>Dziedziczenie</strong> – tworzenie nowych klas na bazie istniejących, z przejęciem i rozszerzaniem funkcji.</li>
+                <li><strong>Polimorfizm</strong> – wielopostaciowość metod i interfejsów (różne implementacje, wspólny kontrakt).</li>
+            </ul>
+        </article>
+
+        <article class="card span-8">
+            <h2>Abstrakcja</h2>
+            <p>
+                Zredukowanie właściwości opisywanego obiektu do najistotniejszych i ograniczenie zakresu funkcjonalności do kluczowych działań.
+                Implementacja jest ukryta za interfejsem – użytkownik zna „co”, a nie „jak”.
+            </p>
+            <h3>Przykład (C#)</h3>
+            <pre><code class="language-cs">abstract class Wielokat
+{
+    protected int[] boki;
+
+    public int IleBokow()
+    {
+        return boki.Length;
+    }
+
+    public int Obwod()
+    {
+        int obwod = 0;
+        foreach (int bok in boki)
+        {
+            obwod += bok;
+        }
+        return obwod;
+    }
+
+    public abstract int Pole();
+}
+</code></pre>
+        </article>
+
+        <article class="card span-4">
+            <h2>Enkapsulacja</h2>
+            <div class="callout">
+                Dostęp do składowych jest ograniczony i odbywa się przez określony interfejs. Pola obiektów
+                powinny być modyfikowane przez metody (gettery/settery), a nie bezpośrednio.
+            </div>
+        </article>
+
+        <article class="card span-6">
+            <h2>Dziedziczenie</h2>
+            <p>
+                Mechanizm pozwalający wywodzić nowe klasy z już istniejących, przejmując ich metody i
+                rozszerzając lub modyfikując funkcjonalność.
+            </p>
+            <h3>Przykład (C#)</h3>
+            <pre><code class="language-cs">class Kwadrat : Wielokat
+{
+    public Kwadrat(int a)
+    {
+        boki = new int[4];
+        boki[0] = boki[1] = boki[2] = boki[3] = a;
+    }
+
+    public override int Pole()
+    {
+        return boki[0] * boki[0];
+    }
+}
+</code></pre>
+        </article>
+
+        <article class="card span-6">
+            <h2>Polimorfizm</h2>
+            <p>
+                Umożliwia różne zachowania przy tym samym interfejsie/metodzie. Przykładowo przeciążenie metody
+                <code>ToString</code> tak, by prawidłowo konwertowała wartości różnych typów (<code>int</code>, <code>float</code>, <code>decimal</code>) na ciąg znaków.
+            </p>
+        </article>
+
+        <article class="card card-full">
+            <h2>Kluczowe różnice – szybkie porównanie</h2>
+            <div class="cmp">
+                <div>
+                    <h3>Strukturalne</h3>
+                    <ul>
+                        <li>Program budowany z podprogramów (funkcji) wywoływanych w określonej kolejności.</li>
+                        <li>Logika rozbita na moduły i procedury.</li>
+                        <li>Silny nacisk na przepływ sterowania.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Obiektowe</h3>
+                    <ul>
+                        <li>Funkcjonalność przypisana do obiektów i ich metod.</li>
+                        <li>Modelowanie domeny przy pomocy klas, relacji i interfejsów.</li>
+                        <li>Ułatwia unikanie błędów jak przekazanie niewłaściwej zmiennej do funkcji (silniejszy kontekst).</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="note" style="margin-top:6px">Tip: W praktyce paradygmaty często się przenikają – można pisać „strukturalnie” w języku OOP i odwrotnie.</p>
+        </article>
+    </section>
+
+    <footer>
+        Opracowanie: notatka HTML/CSS na podstawie materiału źródłowego. Wydrukuj tę stronę, aby uzyskać przyjazną wersję PDF.
+    </footer>
+</div>
+</body>
+</html>

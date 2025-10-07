@@ -1,0 +1,158 @@
+/* Reset podstawowych marginesów i paddingów */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ogólne ustawienia strony */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Nagłówek */
+header {
+    background: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+header hr {
+    border: none;
+    border-top: 2px solid #fff;
+    width: 60%;
+    margin: 15px auto;
+}
+
+/* Sekcja notatki */
+section {
+    display: block; /* traktuj jak sekcję */
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section h2,
+section h3 {
+    margin-top: 20px;
+    color: #0056b3;
+}
+
+section p,
+section ul {
+    margin-top: 10px;
+}
+
+section ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+/* Sekcja tabeli */
+tabela {
+    display: block;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Styl tabeli */
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #0056b3;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* Ustaw szerokości kolumn */
+table th:first-child,
+table td:first-child {
+    width: 40%; /* szeroka kolumna na symbol */
+}
+
+table td:nth-child(2) {
+    text-align: left; /* opis wyrównany do lewej */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Obrazki w tabeli – wypełniają komórkę */
+table td:first-child img {
+    width: 100%;       /* pełna szerokość komórki */
+    max-width: none;   /* brak ograniczenia */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Linki i wyróżnienia */
+strong {
+    color: #000;
+}
+
+em {
+    font-style: italic;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #0056b3; /* dopasowane do nagłówka */
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    border-top: 2px solid #003f7f; /* subtelny akcent */
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffdd57; /* opcjonalny kolor linku, kontrastowy do niebieskiego */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 15px 10px;
+    }
+}
+
