@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T21_b</title>
+</head>
+<body>
+<header>
+    <h1>Autor: Beniamin Cejko</h1>
+    <h2>T21_b</h2>
+</header>
+<section id="wynik">
+    <script>
+        let a = parseInt(prompt("Podaj liczbę całkowitą: "));
+
+        for (let i = 1; i <= 25; i++) {
+            if (i % a === 0) {
+                continue;
+            }
+            document.write(`<br>${i}</br>`);
+        }
+    </script>
+</section>
+</body>
+</html>

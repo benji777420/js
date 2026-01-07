@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z71</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z71 Napisz program, który dla podanej liczby całkowitej większej od zera odpowie ile ma ona cyfr.</h2>
+</header>
+  <script>
+    let liczba = Number(prompt('Podaj liczbę większą od 0!', 0));
+
+    if (liczba > 0) {
+      let ilecyfr = liczba.toString().length;
+      document.write("Liczba " + liczba + " - ilość cyfr: " + ilecyfr);
+    }
+    else {
+      document.write("Podaj liczbę większą od 0!");
+    }
+  </script>
+</body>
+</html>

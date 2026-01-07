@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 75_a</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z75_a - Napisz program, który dla danej liczby całkowitej n wypisuje wyrazy ciągu Fibonacciego według zależności</h2>
+</header>
+
+<section id="wynik">
+  <script>
+    let input = prompt("Podaj liczbę N:");
+    let N = Number(input);
+    let wynik = "";
+
+    if (isNaN(N) || !Number.isInteger(N) || N < 0) {
+      wynik = "Wprowadź poprawną, nieujemną liczbę całkowitą.";
+    } else {
+      if (N === 0) {
+        wynik = "0";
+      } else if (N === 1) {
+        wynik = "0, 1";
+      } else {
+        let a = 0;
+        let b = 1;
+        wynik = "0, 1";
+
+        for (let i = 2; i <= N; i++) {
+          let c = a + b;
+          wynik += ", " + c;
+          a = b;
+          b = c;
+        }
+      }
+    }
+
+    document.write(`<p><strong>F(${N})</strong> = ${wynik}</p>`);
+  </script>
+</section>
+</body>
+</html>

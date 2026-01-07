@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T32_B</title>
+</head>
+<body>
+<script>
+    function doPotegi(x, y) {
+        let wynik=1;
+        for(let i=0; i<y; i++){
+            wynik = wynik * x;
+        }
+
+        document.write(`x = ${x}<br> y = ${y} <br> ${x}<sup>${y}</sup>= ${wynik}<br> `);
+
+        return wynik;
+    }
+    doPotegi(20 , 3)
+</script>
+</body>
+</html>

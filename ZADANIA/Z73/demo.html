@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 73</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z73 - Napisz program, który dla podanej liczby A większej od 1 wyświetla liczby parzyste od 1 do A włącznie, oddzielone średnikami..</h2>
+</header>
+
+<section id="wynik">
+  <script>
+    let input = prompt("Podaj liczbę całkowitą A (mniejszą niż 100)");
+
+    if (!isNaN(input)) {
+      let A = Number(input);
+
+      if (Number.isInteger(A)) {
+        if (A > 1) {
+          let i = 1;
+          let wynik = "";
+
+          while (i <= A) {
+            if (i % 2 === 0) {
+              wynik += i + "<br>";
+            }
+            i++;
+          }
+          document.write(wynik);
+        } else {
+          document.write("Liczba musi być większa niż 1!");
+        }
+      } else {
+        document.write("To nie jest liczba całkowita!");
+      }
+    } else {
+      document.write("Wprowadź poprawną liczbę!");
+    }
+  </script>
+</section>
+</body>
+</html>

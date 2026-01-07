@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 74</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z74 - ułamki i piętra_d</h2>
+</header>
+
+<section id="wynik">
+  <script>
+    let input = prompt("Podaj liczbę całkowitą dodatnią N:");
+
+    if (!isNaN(input)) {
+      let N = Number(input);
+
+      if (Number.isInteger(N) && N > 0) {
+
+        let wynik = "";
+
+        for (let i = 1; i <= N; i++) {
+
+          let dziesietny = (1 / i).toFixed(6);
+          wynik += `<br>Piętro ${i} => 1/${i} = ${dziesietny}\n`;
+
+          wynik += `${">".repeat(i)}\n`;
+        }
+
+        wynik += "<br>>>>>> Koniec wspinaczki wracamy <<<<<<\n";
+
+        for (let i = N; i >= 1; i--) {
+          wynik += `${">".repeat(i)}\n`;
+          wynik += `<br>Piętro ${i}\n`;
+        }
+
+        document.write(`${wynik}`);
+
+      } else {
+        document.write("Podaj liczbę całkowitą dodatnią większą od 0!");
+      }
+
+    } else {
+      docment.write("To nie jest liczba!");
+    }
+  </script>
+</section>
+</body>
+</html>

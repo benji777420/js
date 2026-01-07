@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Z65</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Program, który oblicza pierwiastki równania kwadratowego. Program dla danych A, B i C ma sprawdzać czy równanie jest kwadratowe, czy ma jeden czy dwa pierwiastki i czy ma rozwiązanie.</h2>
+</header>
+  <section id="wynik">
+    <script>
+
+      let a = Number(prompt('Podaj A:'));
+      let b = Number(prompt('Podaj B:'));
+      let c = Number(prompt('Podaj C:'));
+
+      const delta = b * b - 4 * a * c;
+
+      let x0, x1, x2;
+
+      if (delta === 0) {
+        x0 = -b / (2 * a);
+        document.write(`<br>A: ${a}</br>`);
+        document.write(`<br>B: ${b}</br>`);
+        document.write(`<br>C: ${c}</br>`);
+        document.write(`<br>Delta wynosi 0, więc x0 = ${x0}</br>`);
+      }
+      else if (delta > 0) {
+        x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        document.write(`<br>A: ${a}</br>`);
+        document.write(`<br>B: ${b}</br>`);
+        document.write(`<br>C: ${c}</br>`);
+        document.write(`<br>Delta = ${delta}</br>`);
+        document.write(`<br>Delta > 0, więc x1 = ${x1} oraz x2 = ${x2}</br>`);
+      }
+      else {
+        document.write(`<br>A: ${a}</br>`);
+        document.write(`<br>B: ${b}</br>`);
+        document.write(`<br>C: ${c}</br>`);
+        document.write(`<br>Delta = ${delta}</br>`);
+        document.write(`<br>Delta < 0, więc równanie nie ma rozwiązań rzeczywistych</br>`);
+      }
+    </script>
+
+  </section>
+</main>
+</body>
+</html>

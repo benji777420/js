@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z82</title>
+</head>
+<body>
+
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z82 - Napisz program, który dla danej liczby A i B wyświetla blok znaków.</h2>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+  let A = parseInt(prompt("Podaj A:"));
+  let B = parseInt(prompt("Podaj B:"));
+
+  let wynik = "";
+
+  for (let i = 0; i < B; i++) {
+    wynik += "X".repeat(A) + "<br>";
+  }
+
+  document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>

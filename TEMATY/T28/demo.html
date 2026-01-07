@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T28</title>
+</head>
+<body>
+<header>
+    <h1>Autor: Beniamin Cejko</h1>
+    <h2>T28 - Wyświetlanie kwadratów liczb</h2>
+</header>
+<section id="wynik">
+    <script>
+        let N = Number(prompt('Podaj liczbe dodatnią:'));
+
+        if (isNaN(N) || N <= 0) {
+            document.write('Podaj liczbe dodatnią');}
+        else {
+
+            for (let i = 1; i <= N; i++) {
+                document.write("<br>" + i + "<sup>2</sup> = " + (i * i));
+            }
+        }
+
+
+    </script>
+</section>
+</script>
+</section>
+</main>
+</body>
+</html>

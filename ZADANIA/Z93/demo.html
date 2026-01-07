@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Z93</title>
+</head>
+<body>
+
+<header>
+    <h1>Autor: Beniamin Cejko</h1>
+    <h2>Z93</h2>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+    let tekst = prompt("Podaj liczby oddzielone przecinkami");
+
+    if (tekst && tekst.trim() !== "") {
+        let arr = tekst.split(",").map(x => x.trim());
+
+        let iloscElementow = (tekst.split(",").length);
+
+        let liczby = arr.map(Number);
+        let max = liczby[0];
+
+        for (let i = 1; i < liczby.length; i++) {
+            if (liczby[i] > max) {
+                max = liczby[i];
+            }
+        }
+
+        let wynik = "Tablica: " + arr.join(", ") + "<br>" +
+            "Największa liczba: " + max + "<br>" +
+            "Ilość elementów: " + iloscElementow;
+
+        document.getElementById("wynik").innerHTML = wynik;
+
+    } else {
+        document.getElementById("wynik").innerHTML = "Błąd: nie podano żadnych liczb.";
+    }
+</script>
+
+</body>
+</html>

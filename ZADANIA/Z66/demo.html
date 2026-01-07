@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Z66</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Program, który dla dat o postaci dzien1, miesiac1, rok1 oraz dzien2, miesiac2, rok2 określi, która z nich jest wcześniejsza. Program powinien przyjmować dane z formularza, weryfikować ich poprawność (np. czy dzień i miesiąc tworzą istniejącą datę) i wyświetlać obie daty oraz wynik porównania w czytelny sposób.</h2>
+</header>
+  <section id="wynik">
+    <script>
+
+      function checkDate(dzien, miesiac, rok){
+        let data = new Date(rok, miesiac - 1, dzien);
+        return(
+                data.getFullYear() === rok &&
+                        data.getMonth() === miesiac - 1 &&
+                        data.getDate() === dzien
+        );
+      }
+
+      let dzien1 = Number(prompt('Podaj Dzień Pierwszej Daty:'));
+      let miesiac1 = Number(prompt('Podaj Miesiąc Pierwszej Daty:'));
+      let rok1 = Number(prompt('Podaj Rok Pierwszej Daty:'));
+
+      let dzien2 = Number(prompt('Podaj Dzień Drugiej Daty:'));
+      let miesiac2 = Number(prompt('Podaj Miesiąc Drugiej Daty:'));
+      let rok2 = Number(prompt('Podaj Rok Drugiej Daty:'));
+
+      if (!checkDate(dzien1, miesiac1, rok1) || !checkDate(dzien2, miesiac2, rok2)){
+        document.write("Jedna z dat jest niepoprawna!");
+      } else {
+        let data1 = new Date(rok1, miesiac1 - 1, dzien1);
+        let data2 = new Date(rok2, miesiac2 - 1, dzien2);
+
+        document.write("Pierwsza data: " + dzien1 + "-" + miesiac1 + "-" + rok1 + "<br>");
+
+        document.write("Druga data: " + dzien2 + "-" + miesiac2 + "-" + rok2 + "<br><br>");
+
+        if (data1 < data2) {
+          document.write("Pierwsza data jest wcześniejsza.");
+        }
+        else if (data1 > data2) {
+          document.write("Druga data jest wcześniejsza");
+        }
+        else{
+          document.write("Obie daty sa takie same.")
+        }
+      }
+
+    </script>
+
+  </section>
+</main>
+</body>
+</html>

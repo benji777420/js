@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z68</title>
+</head>
+<body>
+<header>
+<h1>Autor: Beniamin Cejko</h1>
+<h2>Program, który określi położenie punktu o współrzędnych (x, y) względem prostokąta wyznaczonego przez proste X=A, X=B, Y=C, Y=D, gdzie A < B i C < D. Program powinien przyjmować dane z formularza (współrzędne punktu oraz parametry prostokąta), weryfikować, czy są to liczby oraz czy A< B i C< D, a następnie wyświetlać dane wejściowe i wynik analizy w czytelny sposób (np. czy punkt leży wewnątrz, na krawędzi czy na zewnątrz prostokąta).</h2>
+
+</header>
+<form id="form">
+  <h3>Współrzędne punktu:</h3>
+  <label>x: <input type="text" id="x"></label><br>
+  <label>y: <input type="text" id="y"></label><br><br>
+
+  <h3>Parametry prostokąta (X=A, X=B, Y=C, Y=D):</h3>
+  <label>A: <input type="text" id="a"></label><br>
+  <label>B: <input type="text" id="b"></label><br>
+  <label>C: <input type="text" id="c"></label><br>
+  <label>D: <input type="text" id="d"></label><br><br>
+
+  <button type="button" onclick="sprawdz()">Wyślij</button>
+</form>
+
+<h3>Wynik:</h3>
+<p id="wynik"></p>
+
+<script>
+  function is_numeric(value) {
+    return !isNaN(value) && value.trim() !== '';
+  }
+
+  function sprawdz() {
+    let x = document.getElementById("x").value;
+    let y = document.getElementById("y").value;
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    let c = document.getElementById("c").value;
+    let d = document.getElementById("d").value;
+    let wynik = document.getElementById("wynik");
+
+    if (!is_numeric(x) || !is_numeric(y) || !is_numeric(a) || !is_numeric(b) || !is_numeric(c) || !is_numeric(d)) {
+      wynik.textContent = "Któraś z podanych wartości nie jest liczbą.";
+      return;
+    }
+
+    x = Number(x);
+    y = Number(y);
+    a = Number(a);
+    b = Number(b);
+    c = Number(c);
+    d = Number(d);
+
+    if (!(a < b && c < d)) {
+      wynik.textContent = "Błędnie zdefiniowany prostokąt (A < B i C < D).";
+      return;
+    }
+
+    if (x > a && x < b && y > c && y < d) {
+      wynik.textContent = "Punkt leży wewnątrz prostokąta.";
+    } else if (
+            (x === a && y >= c && y <= d) ||
+            (x === b && y >= c && y <= d) ||
+            (y === c && x >= a && x <= b) ||
+            (y === d && x >= a && x <= b)
+    ) {
+      wynik.textContent = "Punkt leży na krawędzi prostokąta.";
+    } else {
+      wynik.textContent = "Punkt leży na zewnątrz prostokąta.";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T_32D</title>
+<style>
+  .nieb {
+    color: blue;
+  }
+  .czer {
+    color: red;
+  }
+  .ziel {
+    color: green;
+  }
+</style>
+</head>
+<body>
+<script>
+  function wieksza (a , b) {
+    if (a === b) {
+      document.write(`<p class="nieb">${a} , ${b}</p>`);
+    }
+    else if (a > b) {
+      document.write(`<p class="czer">${a}</p> <p class ="ziel">${b}</p>`);
+    }
+    else if (a < b) {
+      document.write(`<p class="czer">${b}</p> <p class ="ziel">${a}</p>`);
+    }
+  }
+  wieksza (12, 14)
+</script>
+</body>
+</html>

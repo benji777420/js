@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 72</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z72 - Napisz program, który dla podanej liczby całkowitej A, wyświetla liczby od 1 do A oddzielone średnikami o ile liczba A jest mniejsza od 100 w przypadku liczby większej wyświetla liczby jedynie do 100 i kończy działanie.</h2>
+</header>
+
+<section id="wynik">
+  <script>
+    let input = prompt("Podaj liczbę całkowitą A (mniejszą niż 100)");
+
+    if (!isNaN(input)) {
+      let A = Number(input);
+
+      if (Number.isInteger(A)) {
+        if (A < 100) {
+          let i = 1;
+          let wynik = "";
+
+          while (i <= A) {
+            wynik += i + "<br>";
+            i++;
+          }
+          document.write(wynik);
+        } else {
+          document.write("Liczba musi być mniejsza niż 100!");
+        }
+      } else {
+        document.write("To nie jest liczba całkowita!");
+      }
+    } else {
+      document.write("Wprowadź poprawną liczbę!");
+    }
+  </script>
+</section>
+</body>
+</html>

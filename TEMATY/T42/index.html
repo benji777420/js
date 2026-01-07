@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T42</title>
+</head>
+<body>
+<header>
+    <h1>Autor: Beniamin Cejko</h1>
+    <h2>T42 zadanie z datą urodzin_d</h2>
+</header>
+<section id="wynik">
+    <script>
+        let input = prompt('Podaj date urodzenia RRRR-MM-DD:');
+
+        if (!input || input.trim() === "") {
+            document.write("Proszę podać poprawną datę");
+        }
+
+        let birth = new Date(input);
+        let today = new Date();
+
+        if (isNaN(birth.getTime())) {
+            document.write("Podano niepoprawną datę");
+        }
+
+        if (birth > today) {
+            document.write("Niepoprawna data urodzenia");
+        }
+
+        let age = today.getFullYear() - birth.getFullYear();
+        let monthDiff = today.getMonth() - birth.getMonth();
+        let dayDiff = today.getDate() - birth.getDate();
+
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+            age--;
+        }
+
+        let weekdays = ["niedzielę", "poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę"];
+        let weekdayName = weekdays[birth.getDay()];
+
+        let nextBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
+
+        if (nextBirthday < today) {
+            nextBirthday.setFullYear(today.getFullYear() + 1);
+        }
+
+        let diffMs = nextBirthday - today;
+        let diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+        document.write("Twoja data urodzenia: " + input + "<br>");
+        document.write("Urodziłeś/aś się w " + weekdayName + "<br>");
+        document.write("Masz " + age + " lat<br>");
+        document.write("Do Twoich najbliższych urodzin pozostało: " + diffDays + " dni<br>");
+    </script>
+</section>
+</body>
+</html>

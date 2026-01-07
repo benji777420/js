@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z91</title>
+</head>
+<body>
+
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z91</h2>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+  let n = parseInt(prompt("Podaj n"));
+  let tekst = prompt("Podaj liczby oddzielone przecinkami");
+
+  let arr = tekst.split(",").map(x => x.trim());
+  let wynik = "";
+
+  if (arr.length === n) {
+    wynik = "Tablica: " + arr.join(", ");
+  } else {
+    wynik = "blad: podano " + arr.length + " liczb, oczekiwano " + n + ".";
+  }
+
+  document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>

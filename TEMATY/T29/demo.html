@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T29</title>
+</head>
+<body>
+<header>
+    <h1>Autor: Beniamin Cejko</h1>
+    <h2>T29 - Zastosowanie pętli while</h2>
+</header>
+<section id="wynik">
+    <script>
+        let n = parseInt(prompt('Podaj liczbę dodatnią:'));
+
+        if (isNaN(n) || n <= 0) {
+            document.write('Podaj liczbę n');
+        } else {
+            let i = 1;
+            let iloczyn = 1;
+
+            do {
+            iloczyn *= i;
+            document.write("Iloczyn liczb od 1 do " + i + " wynosi: " + iloczyn + "<br>");
+            i++;
+            } while (i <= n);
+        }
+    </script>
+</section>
+</body>
+</html>

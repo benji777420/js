@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 78</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z78 Napisz program, który odczytuje dwie wartości będące dużymi literami alfabetu angielskiego i wypisuje litery od pierwszej do drugiej.</h2>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+  let A = prompt("Podaj pierwszą literę (A-Z):");
+  let B = prompt("Podaj drugą literę (A-Z):");
+
+  let kodA = A.charCodeAt(0);
+  let kodB = B.charCodeAt(0);
+
+  let wynik = "";
+
+  if (kodA < kodB) {
+    for (let i = kodA; i <= kodB; i++) {
+      wynik += String.fromCharCode(i) + " ";
+    }
+  } else if (kodA > kodB) {
+    for (let i = kodB; i <= kodA; i++) {
+      wynik += String.fromCharCode(i) + " ";
+    }
+  } else {
+    wynik = "Litery są takie same: " + A;
+  }
+
+  document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>

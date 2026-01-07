@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>T41</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>T41 - działanie na tablicach</h2>
+</header>
+<section id="wynik">
+  <script>
+    let input = prompt("Podaj liczby oddzielone przecinkami:");
+
+    if (!input || input.trim() === "") {
+      document.write("Proszę podać poprawną listę liczb.");
+    }
+    else {
+      let numbers = input.split(",").map(num => Number(num.trim()));
+      if (numbers.some(isNaN)) {
+        document.write("Proszę podać poprawną listę liczb.");
+      }
+      else {
+        let sorted = [...numbers].sort((a, b) => a - b);
+
+        let even = numbers.filter(n => n % 2 === 0);
+
+        let sum = numbers.reduce((a, b) => a + b, 0);
+
+        document.write("Tablica liczb:" + numbers.join(", ") + "<br>");
+
+        document.write("Posortowana tablica liczb:" + sorted.join(", ") + "<br>");
+
+        document.write("Liczby parzyste:" + even.join(", ") + "<br>");
+
+        document.write("Suma wszystkich elementów:" + sum + "<br>");
+
+      }
+    }
+  </script>
+</section>
+</body>
+</html>

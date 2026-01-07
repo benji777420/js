@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z81</title>
+</head>
+<body>
+
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z81 - Napisz program, który dla podanej liczby całkowitej A wyświetla piramidę znaków X o ilości wierszy równej A (maksymalna wartość A = 50).</h2>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+  let A = parseInt(prompt("Podaj liczbę A (1–50):"));
+
+  let wynik = "";
+
+  if (isNaN(A) || A < 1 || A > 50) {
+    wynik = "Podaj liczbę od 1 do 50.";
+  } else {
+    for (let i = A; i >= 1; i--) {
+      wynik += "X".repeat(i) + "<br>";
+    }
+  }
+
+  document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>

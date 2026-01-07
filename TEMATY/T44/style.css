@@ -1,0 +1,221 @@
+/* Reset podstawowych marginesów i paddingów */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ogólne ustawienia strony */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Bardzo jasne tło */
+    color: #333; /* Ciemny, czytelny tekst */
+}
+
+/* Nagłówek */
+header {
+    background: #0056b3; /* Głęboki niebieski */
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+header p { /* Styl dla Autora */
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+header hr {
+    border: none;
+    border-top: 2px solid #fff;
+    width: 60%;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+/* ---------------------------------------------------------------- */
+/* === DODANE: Stylizacja sekcji zadania (pasuje do <notatka>) === */
+/* ---------------------------------------------------------------- */
+section {
+    max-width: 1000px;
+    margin: 30px auto; /* Wyśrodkowanie */
+    padding: 20px 30px;
+    background-color: #fff; /* Białe tło */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Delikatny cień */
+}
+
+section p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+    border-left: 5px solid #0056b3; /* Niebieski akcent na krawędzi */
+    padding-left: 15px;
+}
+/* ---------------------------------------------------------------- */
+
+
+/* Sekcja notatki (oryginalny znacznik, jeśli go użyjesz) */
+notatka {
+    display: block;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+notatka h2,
+notatka h3 {
+    margin-top: 20px;
+    color: #0056b3;
+}
+
+notatka p,
+notatka ul {
+    margin-top: 10px;
+}
+
+notatka ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+/* Sekcja tabeli */
+tabela {
+    display: block;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Styl tabeli */
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #0056b3;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* Ustaw szerokości kolumn */
+table th:first-child,
+table td:first-child {
+    width: 40%;
+}
+
+table td:nth-child(2) {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Obrazki w tabeli – wypełniają komórkę */
+table td:first-child img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Linki i wyróżnienia */
+strong {
+    color: #000;
+}
+
+em {
+    font-style: italic;
+    color: #555;
+}
+
+/* --- STYL DLA DYNAMICZNEGO KONTENERA JS (.container) --- */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px dashed #0056b3; /* Wyróżnienie miejsca wyniku */
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kolor i rozmiar dla h1 generowanego przez JS */
+.container h1 {
+    color: #0056b3;
+    font-size: 2.2rem;
+    padding: 0;
+    margin: 0;
+}
+/* -------------------------------------------------------- */
+
+
+/* Footer */
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    border-top: 2px solid #003f7f;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 15px 10px;
+    }
+
+    section, notatka, tabela, .container {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}

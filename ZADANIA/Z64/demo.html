@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 64</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Program, który jak poprzednio, ale w przypadku lutego pyta dodatkowo o rok i dla lat przestępnych wyświetla 29 dni, a dla pozostałych 28.)</h2>
+</header>
+
+<section id="wynik">
+  <script>
+    let miesiac = Number(prompt("Podaj numer miesiąca (1-12):", 0));
+    let rok = Number(prompt("Podaj rok:", 2000));
+
+    if (isNaN(miesiac) || miesiac < 1 || miesiac > 12) {
+      document.write("Podaj poprawny numer miesiąca od 1 do 12.");
+    }
+    else if (isNaN(rok) || rok <= 0) {
+      document.write("Podaj poprawny rok (liczba dodatnia).");
+    }
+    else {
+      let dni;
+
+      let przestepny = (rok % 400 === 0) || (rok % 4 === 0 && rok % 100 !== 0);
+
+      if (miesiac === 2) {
+        dni = przestepny ? 29 : 28;
+      }
+      else if ([1, 3, 5, 7, 8, 10, 12].includes(miesiac)) {
+        dni = 31;
+      }
+      else {
+        dni = 30;
+      }
+
+      document.write(`Miesiąc numer ${miesiac} w roku ${rok} ma ${dni} dni.`);
+    }
+  </script>
+</section>
+</body>
+</html>

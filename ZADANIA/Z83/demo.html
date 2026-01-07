@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z83</title>
+</head>
+<body>
+
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Z83 - Napisz program, który dla podanej liczby całkowitej A oznaczającej ilość znaków w wierszu wyświetla następujący blok znaków.</h2>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+  let A = parseInt(prompt("Podaj A:"));
+
+  let wynik = "";
+
+  for (let i = 0; i < A; i++) {
+    let wiersz = "";
+    for (let b = 0; b < A; b++) {
+      if (i === b) {
+        wiersz += "1";
+      } else {
+        wiersz += "0";
+      }
+    }
+    wynik += wiersz + "<br>";
+  }
+
+  document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>

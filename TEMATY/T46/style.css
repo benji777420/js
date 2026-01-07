@@ -1,0 +1,111 @@
+/* Reset podstawowych marginesów i paddingów */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ogólne ustawienia strony */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Nagłówek */
+header {
+    background: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+header hr {
+    border: none;
+    border-top: 2px solid #fff;
+    width: 60%;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+/* Stylizacja sekcji opisu zadania */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+section p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+    border-left: 5px solid #0056b3;
+    padding-left: 15px;
+}
+
+/* --- KLUCZOWY STYL DLA ZADANIA T46 (#data) --- */
+/* To sprawia, że prostokąt jest widoczny i reaguje na myszkę */
+#data {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px dashed #0056b3; /* Niebieska przerywana ramka */
+    text-align: center;
+    min-height: 100px; /* Dzięki temu div nie jest "płaski" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: #0056b3;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#data:hover {
+    background-color: #f0f7ff; /* Delikatny efekt po najechaniu */
+}
+
+/* Styl dla starych kontenerów (jeśli ich jeszcze używasz) */
+.container, .controls-box {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Stopka */
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    section, #data { margin: 15px; }
+}

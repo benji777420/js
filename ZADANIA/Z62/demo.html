@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Z62</title>
+</head>
+<body>
+<header>
+  <h1>Autor: Beniamin Cejko</h1>
+  <h2>Napisz program, który dla podanej wartości wyświetla ocenę wyrażoną słownie</h2>
+</header>
+  <section id="wynik">
+    <script>
+      let A = Number(prompt('Podaj swoją ocenę z zachowania:'));
+
+      if (A === 1 || A === 2 || A === 3) {
+        document.write('Twoja ocena z zachowania to: poprawne');
+      } else if (A === 4 || A === 5) {
+        document.write('Twoja ocena z zachowania to: dobry');
+      } else if (A === 6) {
+        document.write('Twoja ocena z zachowania to: wyróżniający');
+      } else {
+        document.write('Twoja ocena z zachowania to: Niewłaściwa liczba');
+      }
+
+      document.write('<br>Podana liczba to: ' + A);
+    </script>
+  </section>
+</script>
+</section>
+</main>
+</body>
+</html>
